@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { When } from '../if';
 import Modal from '../modal';
 import useForm from '../hooks/form.js';
+import useFetch from '../hooks/fetch.js'
 
 import './todo.scss';
 
@@ -10,11 +11,11 @@ const todoAPI = 'https://api-js401.herokuapp.com/api/v1/todo';
 
 const Todo2 = (props) =>{
 
+
+
+  const [lists, callAPI] = useFetch();
+
   const addItem = () => {
-
-    // e.preventDefault();
-    // e.target.reset();
-
     const _updateState = newItem =>
       setTodoList([...todoList, newItem]);
 
@@ -29,22 +30,6 @@ const Todo2 = (props) =>{
   // const [item,setItem] = useState({});
   const [showDetails,setShowDetails] = useState(false);
   const [details,setDetails] = useState({});
-
-  const callAPI = (url, method = 'get', body, handler, errorHandler) => {
-
-    return fetch(url, {
-      method: method,
-      mode: 'cors',
-      cache: 'no-cache',
-      headers: { 'Content-Type': 'application/json' },
-      body: body ? JSON.stringify(body) : undefined,
-    })
-      .then(response => response.json())
-      .then(data => typeof handler === 'function' ? handler(data) : null )
-      .catch( (e) => typeof errorHandler === 'function' ? errorHandler(e) : console.error(e)  );
-  };
-
-
 
   const deleteItem = id => {
 
