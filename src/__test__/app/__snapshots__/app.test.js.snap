@@ -4,11 +4,9 @@ exports[`<App /> renders correctly 1`] = `
 <div>
   <header>
     <h2>
-      <p>
-        There are
-      </p>
+      There are
       0
-      " Items To Complete
+      Items To Complete
     </h2>
   </header>
   <section
@@ -72,25 +70,7 @@ exports[`<App /> renders correctly 1`] = `
     </div>
     <div>
       <ul />
-      <button
-        onClick={[Function]}
-      >
-        Hide completed
-      </button>
-      <button
-        onClick={[Function]}
-      >
-        Show completed
-      </button>
     </div>
   </section>
-  <footer>
-    <p>
-      23:18:22 GMT+0200 (Eastern European Standard Time)
-    </p>
-    <h3>
-      By obada Q 2020
-    </h3>
-  </footer>
 </div>
 `;
